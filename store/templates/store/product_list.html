@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Products{% endblock %}
+
+{% block content %}
+<div class="container page-header">
+    <h1>All Products</h1>
+</div>
+<div class="container">
+    <div class="product-grid">
+        {% for product in products %}
+            <div class="product-card">
+                <a href="{% url 'store:product_detail' product.slug %}">
+                    {% if product.image %}
+                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                        <div class="product-placeholder">No image</div>
+                    {% endif %}
+                    <h3>{{ product.name }}</h3>
+                    <p class="price">${{ product.price }}</p>
+                </a>
+                {% if user.is_authenticated and product.stock > 0 %}
+                    <a href="{% url 'store:add_to_cart' product.id %}?next={% url 'store:product_list' %}" class="btn btn-small">Add to Cart</a>
+                {% elif not user.is_authenticated %}
+                    <a href="{% url 'store:login' %}?next={% url 'store:product_detail' product.slug %}" class="btn btn-small">Login to Buy</a>
+                {% else %}
+                    <span class="out-of-stock">Out of stock</span>
+                {% endif %}
+            </div>
+        {% empty %}
+            <p>No products available.</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
