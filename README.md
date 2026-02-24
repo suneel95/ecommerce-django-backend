@@ -9,7 +9,7 @@ A robust, production-ready E-commerce solution developed using the **Django MVC 
 ## Project Visuals
 | Home Page | Shopping Cart | Admin Dashboard |
 |---|---|---|
-| ![Home](https://via.placeholder.com/400x250?text=Home+Page+Screenshot) | ![Cart](https://via.placeholder.com/400x250?text=Cart+Page+Screenshot) | ![Admin](https://via.placeholder.com/400x250?text=Django+Admin+Screenshot) |
+| ![Home](https://github.com/suneel95/ecommerce-django-backend/blob/4b19b940fc012b8c9d5fb1d00ca9454e3a32df47/home.png) | ![Cart](https://via.placeholder.com/400x250?text=Cart+Page+Screenshot) | ![Admin](https://via.placeholder.com/400x250?text=Django+Admin+Screenshot) |
 *(Note: Replace the placeholder links with actual screenshots from your project once uploaded to GitHub)*
 
 ---
